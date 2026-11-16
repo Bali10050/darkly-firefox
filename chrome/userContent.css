@@ -1,0 +1,869 @@
+@-moz-document url("about:newtab"), url("about:home"){.outer-wrapper.ds-outer-wrapper-breakpoint-override.visible-logo{background-image: url("./Background.png"), url("./NewtabBackground.png"); background-position: 0 -44px, 0 0 !important;}}/*  Custom background -- Also check userChrome.css  */
+
+@-moz-document url-prefix(about:){
+/*  Colors  */
+:root{--newtab-background-color: -moz-Dialog !important;
+--in-content-background-color: -moz-Dialog !important;
+--in-content-page-background: -moz-Dialog !important;
+--in-content-table-background: -moz-Dialog !important;
+--in-content-box-background-odd: -moz-Dialog !important;
+--card-background-color: color-mix(in srgb, currentColor 5%, -moz-Dialog) !important;
+--in-content-box-background: color-mix(in srgb, currentColor 5%, -moz-Dialog) !important;
+--in-content-button-background: color-mix(in srgb, currentColor 5%, -moz-Dialog) !important;
+--in-content-box-background: color-mix(in srgb, currentColor 13%, -moz-Dialog) !important;
+--in-content-box-info-background: color-mix(in srgb, currentColor 13%, -moz-Dialog) !important;
+--message-bar-text-color: color-mix(in srgb, currentColor 13%, -moz-Dialog) !important;
+--newtab-background-color-secondary: color-mix(in srgb, currentColor 13%, -moz-Dialog) !important;
+--in-content-button-background-hover: color-mix(in srgb, currentColor 13%, -moz-Dialog) !important;
+--box-background: color-mix(in srgb, currentColor 13%, -moz-Dialog) !important;
+--button-background-color: color-mix(in srgb, currentColor 13%, -moz-Dialog) !important;
+--button-hover-background-color: color-mix(in srgb, currentColor 15%, -moz-Dialog) !important;
+--button-background-color-hover: AccentColor !important;
+--table-header-background-color: AccentColor !important;
+--table-background-color: color-mix(in srgb, currentColor 2%, -moz-Dialog) !important;
+--background-color-box: color-mix(in srgb, currentColor 2%, -moz-Dialog) !important;
+--table-row-background-color: color-mix(in srgb, currentColor 5%, -moz-Dialog) !important;
+--table-row-background-color-alternate: -moz-Dialog !important;
+--background-color-list-item-hover: color-mix(in srgb, AccentColor 20%, -moz-Dialog) !important;
+--color-accent-primary: AccentColor !important;
+--border-color: color-mix(in srgb, FieldText 12.5%, #0000) !important;
+--panel-border-radius: 13px !important;
+--panel-border-color: color-mix(in srgb, FieldText 12.5%, #0000) !important;
+--panel-separator-color: color-mix(in srgb, FieldText 6.2%, #0000) !important;
+--color-accent-primary-selected: AccentColor !important;
+--text-color-accent-primary-selected: #fff !important;
+
+}
+}
+
+
+@-moz-document url(about:blank){
+@media (prefers-color-scheme: dark) {
+
+body{background:  #222 !important; }
+}
+
+@media (prefers-color-scheme: light)
+{body{background:  #eee !important; }}}
+
+
+/*  Newtab  */
+@-moz-document url("about:home"), url("about:newtab"){
+    .logo-and-wordmark > .wordmark{height: 82px !important; margin-inline-start: 16px !important; width: 134px !important; background-size: 134px !important}
+    @media screen and (min-width:1325px){.search-handoff-button{width: 986px !important;}}
+    @media screen and (min-width:850px) and (max-width:1324px){.search-handoff-button{width: calc(78% + 1px) !important} }
+    @media screen and (max-width:849px){.search-handoff-button{width: calc(55% + 170px) !important}}
+    .search-inner-wrapper{margin: none !important; width: 100% !important;}
+    .container { display: block !important; }
+    .content { display: block !important; }
+    .search-wrapper { display: block !important; }
+    .nova-outer-wrapper { align-content: center; }
+    #root { width: 100vw; top: 0px; position: absolute; left: 0px; }
+    .search-handoff-button{ margin: 0 auto !important;}
+    .logo-and-wordmark-wrapper { display: none !important; }
+    .content-full-width{margin: auto !important;}
+    #dialog-report{display: none !important}
+    .nova-outer-wrapper { background: var(--newtab-wallpaper); }
+
+}
+
+@-moz-document url("about:privatebrowsing"){
+
+/*  Firefox home private  */
+.logo-and-wordmark > .wordmark{height: 82px !important; margin-inline-start: 16px !important; width: 134px !important; background-size: 134px !important}
+@media screen and (min-width:1325px){.showPrivate.showSearch.container{width: 986px !important;}}
+@media screen and (min-width:850px) and (max-width:1324px){.showPrivate.showSearch.container{width: calc(78% + 1px) !important} body{padding: 48px calc(40px + 10%) !important;}}
+@media screen and (max-width:849px){.showPrivate.showSearch.container{width: calc(55% + 170px) !important}body{padding: 48px calc(25% - 80px) !important;}}
+.outer-wrapper.ds-outer-wrapper-breakpoint-override{padding: 30px 32px !important}
+
+.logo-and-wordmark, .nova-tagline, .nova-subheader{display: none !important}
+
+#search-handoff-button{border-radius: 10px !important; background-color: color-mix(in srgb, FieldText 13%, -moz-Dialog) !important; border: none !important; box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15) !important;}
+.fake-textbox{color: FieldText !important;}
+.search-inner-wrapper{min-width: 0 !important; flex-grow: 2 !important; max-width: 720px; height: 42px !important;}
+.showPrivate.showSearch.container{padding: 0px !important; display: flex !important; flex-direction: row !important; flex-wrap: wrap !important; justify-content: center !important; align-items: center !important; align-content: space-around !important}
+.logo-and-wordmark .logo{background-size: 60px !important; height: 60px !important; width: 60px !important}
+.logo-and-wordmark{max-width: fit-content !important; max-height: 82px !important; opacity: 0.9 !important; margin-bottom: 0 !important; flex: 1 !important; flex-basis: 20% !important}
+.showPrivate.showSearch.container{display: flex !important; padding-top: 0px !important;vertical-align: middle; flex-direction: row; align-items: center; max-width: unset !important; width: -moz-available !important; gap: 20px 0px !important}
+.customize-menu{border-radius: 10px 0 0 10px !important}
+#root > div{align-items: center; display: flex}
+.info{display: none}
+.wordmark{background-size: 134px !important; margin-inline-start: 0 !important; fill: FieldText !important;}
+}
+
+
+@-moz-document url-prefix(about:devtools), url-prefix(chrome:){
+:root{--theme-accordion-header-background:  -moz-Dialog !important;}
+@media (prefers-color-scheme: light)
+{:root{color-scheme: light;}}
+@media (prefers-color-scheme: dark)
+{:root{color-scheme: dark;}}
+
+/*#toolbox-close { background-image: url(./svg/close-symbolic.svg) !important; background-repeat: no-repeat !important; background-size: 18px !important; background-position: center !important; background-color: #0000 !important;}
+#toolbox-close:hover:before{ background-image: url(./svg/close-hover-symbolic.svg) !important;}
+#toolbox-close img{display: none !important}*/
+
+.debugger .tabs-navigation{width: calc(100% - 40px) !important;}
+
+/* Sources.css | chrome://devtools/content/debugger/src/components/PrimaryPanes/Sources.css */
+
+.debugger .panels{margin-top: -33px; /*padding-top: 36px !important;*/ /*overflow: visible !important*/}
+.debugger-settings-menu-button{margin-right: 11px !important;}
+
+.debugger .tree:not(.project-text-search .tree) {margin-top: 34px !important;}
+.debugger .tabs-navigation{z-index: 6 !important;}
+
+.sources-list.sources-list-has-overflow:not(.sources-list-custom-root) .debugger-settings-menu-button {
+    inset-inline-end: 1px !important;
+}
+.debugger div.outline-tab {
+    margin-right: 10px !important;
+    margin-left: 5px !important;
+}
+
+.source-tab{background: #0003 !important ; padding: 4px !important;}
+.source-tab:first-of-type{border-radius: 10px 0 0 10px !important}
+.source-tab:last-of-type{border-radius: 0 10px 10px 0 !important}
+.source-tab:only-of-type{border-radius: 10px !important}
+.source-tab::before {
+
+    width: calc(100% - 6px) !important;
+    height: calc(100% - 6px) !important;
+    background-color: color-mix(in srgb, FieldText 5%, #0000) !important;
+    margin: 3px !important;
+    border-radius: 6px !important;
+    border: none !important;
+    z-index: 0 !important
+}
+
+div.source-tab {
+    padding-right: 15px !important;
+}
+.source-tab .close-btn {z-index: 1 !important;background-position: center !important;
+    visibility: visible !important; display: block !important; width: 16px !important; height: 16px !important}
+  .source-tab .close-btn  span{ width: 16px !important; height: 16px !important}
+#outline-tab-panel {
+margin-top: 36px !important;
+}
+
+/* Element | chrome://devtools/content/debugger/index.html */
+
+.project-search-results-toolbar {
+    background: #0000 !important;
+    margin-right: 4px !important;
+}
+
+/* Element | chrome://devtools/content/debugger/index.html */
+
+.refresh-btn {
+    margin-top: -53px !important;
+}
+
+
+
+/* Element | chrome://devtools/content/debugger/index.html */
+
+.source-tab .close-btn span{
+    opacity: 0 !important;
+}
+
+/* Element | chrome://devtools/content/debugger/index.html */
+
+.source-tab .close-btn{-moz-context-properties: fill !important; background:none !important; background-image: url(./svg/close-symbolic.svg) !important; background-size: 16px !important; fill: currentColor !important}
+.source-tab .close-btn:hover{ background-image: url(./svg/close-hover-symbolic.svg) !important; }
+
+
+.debugger .search-field.small input{border-radius: 10px !important;}
+
+#input[type="checkbox"]:not(:checked), input[type="checkbox"]:not(:checked){border-radius: 4px !important; transition: .25s; min-width: 8px !important; background: color-mix(in srgb, currentColor 5%, #0000) !important; border-top: 1px solid #fff3 !important; height: 14px !important; width: 14px !important; outline: none !important; appearance: none !important;}
+#input[type="checkbox"]:checked, input[type="checkbox"]:checked{border-radius: 4px !important; background-image: url(./svg/check-symbolic.svg) !important; background-color: AccentColor !important; border-top: 1px solid #fff3 !important; background-position: -1px -1px !important; height: 14px !important; width: 14px !important; outline: none !important;}
+input[type="checkbox"].ruleview-enableproperty:checked, input[type="checkbox"].ruleview-enableproperty:not(:checked)
+{height: 13px !important;}
+
+#toolbox-close:before{ background:none !important; background-image: url(./svg/close-symbolic.svg) !important; background-size: 16px !important;}
+#toolbox-close:hover:before{ background-image: url(./svg/close-hover-symbolic.svg) !important; }
+
+/*#input[type="checkbox"], input[type="checkbox"],*/
+.devtools-togglebutton,
+.devtools-button:not(.devtools-toolbar .devtools-button):not(.tabs-navigation button),
+.select-wrapper,
+input:not(.devtools-toolbar input):not(.debugger .search-field.small input):not([type="checkbox"]):not([type="range"]),
+textarea,
+#show-all.ghost-button,
+#input,
+.disco-cta-button,
+button:not([title="Close"])>.button-background,
+input[type="range"]::-moz-range-thumb,
+select,
+button:not(.tabs-navigation button):not(.devtools-tabbar-button):not(.devtools-tab):not(.command):hover
+{
+    box-shadow: #0004 1px 1px 2px !important;
+    border: none !important;
+    background-color: light-dark(#ccc, #333) !important;
+    border-radius: 10px !important;
+    appearance: none !important
+}
+
+
+
+
+
+input:checked, #input:checked, #input.toggle-button[aria-pressed="true"], #about-config-show-only-modified:checked{background: AccentColor !important}
+input:checked:hover, #input:checked:hover, #input.toggle-button[aria-pressed="true"]:hover, #about-config-show-only-modified:checked:hover{background-color: color-mix(in srgb, #fff 20%, AccentColor) !important}
+
+#input[type="checkbox"], input[type="checkbox"]
+{border-top: 1px solid #fff3 !important;}
+
+
+input[type="checkbox"]:not(:checked).devtools-checkbox-toggle, input[type="checkbox"]:checked.devtools-checkbox-toggle{height: 9px !important; background-image: none !important; border-radius: 6px !important;  width: 30px !important; border: none !important}
+.devtools-checkbox-toggle:before{height: 15px !important; width: 16px !important; background-color: light-dark(#ccc, #333) !important; border-top: 1px solid #fff3 !important; margin-top: -7px !important; box-shadow: #0004 1px 1px 2px !important;}
+.devtools-checkbox-toggle:not(:checked):before{margin-left: -3px !important}
+.devtools-checkbox-toggle:checked:before{margin-left: -3px !important}
+#input[type="radio"], input[type="radio"]{transition: .25s;}
+#input[type="radio"]:checked, input[type="radio"]:checked{ background-image: url(./svg/bullet-symbolic.svg) !important;}
+
+
+input[type="range"]{height: 2px !important; background-color: color-mix(in srgb, FieldText 30%, -moz-Dialog) !important;}
+input[type="range"]::-moz-range-thumb:hover{background: AccentColor !important;}
+input[type="range"]::-moz-range-progress{background: AccentColor !important;}
+input[type="range"]:hover{background-color: color-mix(in srgb, FieldText 30%, -moz-Dialog) !important;}
+input[type="range"]:hover::-moz-range-thumb{background: AccentColor !important;}
+
+input[type="range"]::-moz-range-thumb{height: 13px !important;width: 14px !important;border-top: 1px solid #fff3 !important; }
+
+
+input::-moz-number-spin-up {-moz-context-properties: fill !important; appearance: none !important;/*background-color: #ff0 !important;*/ width: 16px !important; height: 10px !important; background: url("./maximize-symbolic.svg") !important; fill: currentColor !important; margin-top: -5px !important ; background-size: 10px !important; background-repeat: no-repeat !important; background-position: 6px 3px !important}
+
+input::-moz-number-spin-down {-moz-context-properties: fill !important; appearance: none !important;/*background-color: #ff0 !important;*/ width: 16px !important; height: 10px !important; background: url("./minimize-symbolic.svg") !important; fill: currentColor !important; margin-top: -3px !important ; background-size: 10px !important; background-repeat: no-repeat !important; background-position: 6px 3px !important}
+
+
+
+
+#toolbox-toolbar-mount:has(.chrome-debug-toolbar) { margin-top: 8px !important; }
+/*  Devtools tabs  */
+ul.tabs-menu > li{background: color-mix(in srgb, -moz-Dialog 80%, #000) !important ; padding: 4px !important;}
+ul.tabs-menu > li:first-of-type{border-radius: 10px 0 0 10px !important}
+ul.tabs-menu > li:last-of-type{border-radius: 0 10px 10px 0 !important}
+ul.tabs-menu > li:only-of-type{border-radius: 10px !important}
+.debugger .tabs-navigation{background: #0000 !important;}
+.tabs-navigation{background: linear-gradient(90deg, #0000 50%, color-mix(in srgb, -moz-Dialog 80%, #000) 50%) !important;}
+ul.tabs-menu > li.is-active a{background: -moz-Dialog !important ; border-radius: 10px;}
+.tabs-navigation{height: min-content !important;}
+.devtools-tab-line{display:none !important}
+
+#toolbox-container .toolbox-tabs button{background: #0000 !important ; padding: 0 5px !important;}
+#toolbox-container .toolbox-tabs button:first-of-type{border-radius: 10px 0 0 10px !important}
+#toolbox-container .toolbox-tabs button:last-of-type{border-radius: 0 10px 10px 0 !important}
+#toolbox-container .toolbox-tabs button:only-of-type{border-radius: 10px !important}
+#toolbox-container .toolbox-tabs button.selected{background: -moz-Dialog !important; border-radius: 10px !important}
+.toolbox-tabs { background: #0003; width: fit-content; border-radius: 10px !important; padding: 4px; margin: 4px; height: fit-content; }
+#toolbox-toolbar-mount { height: 36px !important; }
+:has(.chrome-debug-toolbar) #toolbox-toolbar-mount { height: 74px !important; }
+
+#toolbox-buttons-start .devtools-separator{display: none}
+
+#toolbox-container{margin-top: 2px !important; background: -moz-Dialog !important}  /*  Makes rounded corners with userchrome look better  */
+.devtools-tabbar{background: -moz-Dialog !important; border: none !important}
+#toolbox-container .customize-animate-enter-done, #toolbox-container .customize-menu, #toolbox-container .top-site-outer:hover, #toolbox-container button{background-color: -moz-Dialog!important}
+.devtools-toolbar{height: 35px !important; border: none !important; background-color: -moz-Dialog !important}  /*  Has effect on all toolbars  */
+.toolbox-panel-iframe{border-radius: 8px 8px 0 0 !important}
+#toolbox-toolbar-mount{ background: -moz-Dialog !important;}
+.toolbox-panel.theme-toolbar{ background: -moz-Dialog !important;}
+/*  Debugger profile  */
+.chrome-debug-toolbar{ margin: -5px 5px 5px 5px !important; border: none !important; border-radius: 10px !important; background: color-mix(in srgb, currentColor 5%, -moz-Dialog) !important; padding-right: 5px !important; }
+.chrome-debug-toolbar__modes > label{ border: none !important;  background: color-mix(in srgb, currentColor 5%, -moz-Dialog) !important; }
+.chrome-debug-toolbar__modes input, .chrome-debug-toolbar__modes .mode__sublabel{display: none !important}
+.chrome-debug-toolbar__modes .selected{background: color-mix(in srgb, currentColor 3%, -moz-Dialog) !important}
+
+
+.tooltip-panel{ border-radius: 10px !important; border: none; background: color-mix(in srgb, currentColor 13%, -moz-Dialog) !important; }
+.tooltip-arrow{display: none !important}
+.command{  border-radius: 8px !important; margin: 0 10px; width: 90%;}}
+
+@-moz-document url-prefix(chrome:){
+
+
+
+
+/*  Notification fix*/
+#toolbox-notificationbox  .notification{ background: color-mix(in srgb, #000 20%, -moz-Dialog) !important; border: none !important; padding: 3px !important; }
+
+/*  Checkbox background fix  */
+/*.accordion input:not([type="checkbox"]) {border: none !important}
+#browser-style-checkbox:not(:checked):hover, #devtools-cache-checkbox:not(:checked):hover, #record-allocation-stacks-checkbox:not(:checked):hover, .accordion input[type="checkbox"]:not(:checked):hover, #devtools-display-tabbing-order-checkbox:not(:checked):hover{appearance: Dialog !important; border: 2px solid currentColor !important; border-radius: 2px !important;background-color: color-mix(in srgb, currentColor 13%, -moz-Dialog) !important}
+#browser-style-checkbox:not(:checked), #devtools-cache-checkbox:not(:checked), #record-allocation-stacks-checkbox:not(:checked), .accordion input[type="checkbox"]:not(:checked), #devtools-display-tabbing-order-checkbox:not(:checked){appearance: Dialog !important; border: 2px solid currentColor !important; border-radius: 2px !important}*/
+
+:root{scrollbar-color: color-mix(in srgb, FieldText 35%, -moz-Dialog) transparent !important;}  /*  Removes scrollbar backround  */
+
+/*  Inspector  */
+#markup-box{background-color: -moz-Dialog !important}
+#markup-box iframe{border-radius: 15px !important;background-color: color-mix(in srgb, currentColor 5%, -moz-Dialog) !important; margin-left: 10px !important; width: 98.65% !important}
+.tag-state{border-radius: 6px !important; width: auto !important; left: -16px !important; right: 10px !important;}
+.tag-hover{background: color-mix(in srgb, #000 20%, -moz-Dialog) !important; z-index: 0 !important; opacity: 30%}
+html body.theme-body.devtools-monospace div#root-wrapper div#root{ padding: 6px 0 6px 10px !important; }
+#inspector-breadcrumbs{top: auto; !important}
+#inspector-breadcrumbs-toolbar{height: 24px !important;}
+#inspector-eyedropper-toggle{margin-right: 2px !important;}
+.theme-body{background: transparent !important}
+#ruleview-toolbar{ flex-wrap: nowrap !important; }
+#sidebar-panel-changes{ border-radius: 10px !important; background: color-mix(in srgb, #000 20%, -moz-Dialog) !important; }
+.computed-property-view{ background: transparent !important;}
+.computed-property-view.row-striped{background-color: color-mix(in srgb, currentColor 5%, -moz-Dialog) !important;}
+#computed-property-container{background-color: color-mix(in srgb, #000 20%, -moz-Dialog) !important}
+#computed-container-focusable, #sidebar-panel-computedview{background: -moz-Dialog !important}
+#computed-container{border-radius: 10px !important;}
+
+/*  Console  */
+.webconsole-filteringbar-wrapper.wide{margin-bottom: 8px !important;}
+.tabs-menu-item{background-color: transparent !important}
+.message{margin: 0 1px 2px 1px !important; border-radius: 10px !important; padding: 5px !important; border-bottom: -6px !important; width: 98% !important; left: 50%; transform: translate(-50%, 0);}
+.jsterm-input-container{border-radius: 8px 8px 0 0 !important; border: none !important}
+.webconsole-app{background-color: -moz-Dialog !important}
+#mount .sidebar-item{border-radius: 10px !important; padding: 10px 0 10px 5px !important; margin-bottom: 4px !important;}
+#mount .js-sidebar{padding: 0 5px 0px 7px !important; background: -moz-Dialog !important; border: none !important}
+#mount > main{background: -moz-Dialog;}
+#mount .app-page{border-radius: 10px !important; background-color: color-mix(in srgb, currentColor 5%, -moz-Dialog) !important;}
+html#devtools-webconsole body.theme-sidebar main#app-wrapper.theme-body div.webconsole-app.jsterm-editor.eager-evaluation div.flexible-output-input div.jsterm-input-container.devtools-input{ margin-top: 8px !important; }
+
+/*  Input/searchboxes  */
+.devtools-filterinput{ background-color: -moz-Dialog !important; vertical-align: center !important; border-radius: 8px !important; }
+.sources-panel .devtools-filterinput{background: color-mix(in srgb, currentColor 5%, -moz-Dialog)  !important;}
+#font-preview-input-container { border: none !important; background: -moz-Dialog !important;  border-radius: 8px !important;  height: auto !important; }
+#font-preview-input-container .devtools-searchinput{ background: none !important; }
+.font-value-input{ border-radius: 10px !important; border: none !important; padding: 3px 10px 3px 3px !important; }
+#font-preview-input-container .devtools-searchinput{ height: 31px !important; border-radius: 10px !important; margin: -8px 0 -8px 0; }
+.input-expression, .xhr-input-url, .event-search-input{background:  color-mix(in srgb, currentColor 3%, -moz-Dialog) !important; appearance: none !important;  margin: 5px 2px 5px 8px !important; border-radius: 8px !important; width: 97% !important;}
+.exclude-patterns-field.small input{ border-radius: 8px !important; border: none !important; padding: 18px 5px 18px 10px !important; background-color: color-mix(in srgb, currentColor 5%, -moz-Dialog) !important; appearance: inherit !important; }
+.devtools-searchbox{height: auto !important; border-radius: 8px !important;}
+
+/*  Font editor  */
+#font-editor{ background: -moz-Dialog !important; }
+#font-container > .accordion{border: none !important}
+.font-value-select{ background: auto !important; padding: 4px !important; border-radius: 3px !important; border: none !important; text-align: center; background-image: none !important }
+#font-container{ background: -moz-Dialog !important; }
+
+/*  Debugger  */
+.source-outline-panel .tree-node{border-radius: 8px !important; padding: 5px !important; width: 96% !important; margin: 0 0 2px 2px}
+.perf-onboarding{display: none !important}
+.source-outline-tabs .tab:not(.active){background: color-mix(in srgb, currentColor 5%, -moz-Dialog)  !important; width: 90%; color: inherit !important}
+.source-tab:not(.active) > .img{display: none !important}
+.exclude-patterns-field.small{background: -moz-Dialog !important; border: none !important}
+.exclude-patterns-field.small > *{background-color: color-mix(in srgb, currentColor 5%, -moz-Dialog) !important;}
+.project-text-search{margin-top: 9px !important;}
+.project-text-search .search-outline{ width: 94%; margin-left: 8px; border: none !important; }
+.project-text-search .search-outline .search-field.small{ background: color-mix(in srgb, currentColor 5%, -moz-Dialog) !important; padding: 5px; border-radius: 8px; border: none !important; margin-bottom: 5px !important; margin-top: 1px !important; }
+.exclude-patterns-field.small > label{display: contents;}
+.search-modifiers{background: color-mix(in srgb, currentColor 5%, -moz-Dialog) !important;}
+.source-outline-tabs{width: 98% !important}
+.source-outline-tabs > .tab{background-color:  color-mix(in srgb, currentColor 3%, -moz-Dialog) !important;}
+.source-outline-tabs > .tab:first-child{border-radius: 8px 0 0 8px !important}
+.source-outline-tabs > .tab:last-child{border-radius: 0 8px 8px 0 !important}
+.tab.sources-tab.active{background-color:  color-mix(in srgb, currentColor 3%, -moz-Dialog) !important;}
+.source-footer, .source-header{background: -moz-Dialog !important; border: none !important}
+.editor-wrapper > *{background: -moz-Dialog !important; border: none !important}
+.editor-wrapper > * > *, .welcomebox{border-radius: 8px !important;background-color: color-mix(in srgb, currentColor 5%, -moz-Dialog) !important; z-index: 2 !important;}
+.outline-footer{background-color: color-mix(in srgb, currentColor 5%, -moz-Dialog) !important; border-radius: 8px !important; border: none !important;}
+.outline-footer > button {width: -moz-available !important; border-radius: 8px !important; }
+.outline-footer > button:hover {width: -moz-available !important; border-radius: 8px !important; background: color-mix(in srgb, currentColor 13%, -moz-Dialog) !important;}
+.secondary-panes-wrapper > *{background: -moz-Dialog !important;}
+.command-bar{border: none !important;}
+.source-outline-panel{margin-top: -8px !important;padding: 8px !important;}
+
+/*  Memory  */
+.snapshot-list-item{ border-radius: 10px !important; border: none !important; margin-bottom: 5px !important; }
+.snapshot-list-item:not(.selected){background-color: color-mix(in srgb, currentColor 5%, -moz-Dialog) !important;}
+#shortest-paths > div{border-radius: 10px !important; background: -moz-Dialog !important;}
+#shortest-paths{background: -moz-Dialog !important;}
+#heap-view .h-split-box{border-radius: 10px !important;}
+.heap-view-panel > .tree{ border-radius: 10px 10px 0 0!important; }
+.heap-view-panel > .header{background: -moz-Dialog !important; border: none !important}
+.heap-view-panel{background: -moz-Dialog !important}
+#memory-tool-container > ul{ padding: 5px !important; padding-top: 5px; background: -moz-Dialog !important; border: none !important; padding-top: 2px !important; }
+.tree-map-container{ border-radius: 10px !important; }
+.toolbar-group, #record-allocation-stacks-label{border-inline-end: none !important;}
+#record-allocation-stacks-label{margin-inline-end: 10px !important;}
+
+/*  Stylesheet editor/Console  */
+.devtools-invisible-splitter, .splitview-nav{background-color: -moz-Dialog !important}
+.splitview-controller{padding: 0 15px 0 5px !important; background-color: -moz-Dialog !important;}
+.theme-body.devtools-monospace .CodeMirror-gutters{background: color-mix(in srgb, #000 20%, -moz-Dialog) !important}
+.theme-body.devtools-monospace .CodeMirror-scroll{background-color: color-mix(in srgb, currentColor 5%, -moz-Dialog) !important;}
+
+/*  Tabs  */
+.outline-filter{border: none !important;}
+.tabs, .sources-panel{background-color: -moz-Dialog !important}
+.tabs-navigation, .source-outline-tabs{background-color: color-mix(in srgb, currentColor 3%, -moz-Dialog) !important; border: none !important; padding: 0 10px 0 5px; border-radius: 10px !important; margin: 3px !important}
+.all-tabs-menu{right: 10px !important; background-color: transparent !important; border: none !important;}
+.panels{background-color: -moz-Dialog !important}
+pre{margin-right: 20px;}
+
+/*  Network  */
+.request-list-container{background: -moz-Dialog !important;}
+.request-list-empty-notice, .requests-list-scroll{border-radius: 10px !important; background: color-mix(in srgb, currentColor 5%, -moz-Dialog) !important}
+
+/*  Probably the console  */
+#mount .sidebar-item{border-radius: 10px !important; padding: 10px 0 10px 5px !important; margin-bottom: 4px !important;}
+#mount .js-sidebar{padding: 0 5px 0px 7px !important; background: -moz-Dialog !important; border: none !important}
+#mount > main{background: -moz-Dialog;}
+#mount .app-page{border-radius: 10px !important; background-color: color-mix(in srgb, currentColor 5%, -moz-Dialog) !important;}
+
+/*  Storage  */
+#storage-table{background: -moz-Dialog !important;}
+#storage-tree{background: -moz-Dialog !important;border-radius: 10px !important; padding-top: 3px !important}
+
+/*  Fixes for sidebar version  */
+.horz{background-color: -moz-Dialog !important}
+.horz .splitter{flex: 0 0 10px !important; margin: auto 2px auto 2px !important; height: 80%; justify-content: center; opacity: 100%; border-radius: 4px !important;}
+.horz #ruleview-container{  margin-top: 15px;}
+
+/*  Fix for light mode  */
+.theme-light .tree-widget-item.theme-selected{color: #000 !important;}
+
+/*  ?  */
+.devtools-toolbar-select{ background-color: color-mix(in srgb, currentColor 5%, -moz-Dialog) !important; border-radius: 4px !important; border: none !important; padding: 4px !important; appearance: dialog !important; }
+#toolbox-deck{border-radius: 10px !important;}
+.theme-dark{background-color: color-mix(in srgb, currentColor 5%, -moz-Dialog) !important}
+ body{background-color: color-mix(in srgb, currentColor 7%, -moz-Dialog) !important}
+#ruleview-container, .layout-container, .devtools-sidebar-tabs .panels{border-radius: 10px !important; background-color: -moz-Dialog; padding: 0 5px 0 5px;}
+.splitter{flex: 0 0 10px !important; margin: 30px -9px 30px -6px !important; justify-content: center; opacity: 0;}
+.devtools-inspector-tab-panel{background-color: -moz-Dialog !important}
+.compatibility-app__container{background-color: -moz-Dialog !important}
+.compatibility-footer{border: none !important;}
+.devtools-separator{display: none !important;}
+
+/*  Acessability  */
+window box.devtools-responsive-container.theme-body vbox#storage-tree ul.tree-widget-container li ul.tree-widget-children li div.tree-widget-item{background-color: color-mix(in srgb, currentColor 5%, -moz-Dialog) !important; border-radius: 8px !important; margin-bottom: 2px !important; padding: 5px !important; width: 85% !important; margin-left: 12px !important;  margin-right: 5px !important}
+.tree-widget-item:not(window box.devtools-responsive-container.theme-body vbox#storage-tree ul.tree-widget-container li ul.tree-widget-children li div.tree-widget-item){ border-radius: 8px !important; margin-bottom: 2px !important; padding: 5px !important; width: 90% !important; margin-left: 2px !important; margin-right: 5px !important}
+.devtools-side-splitter{opacity: 0% !important}
+.devtools-responsive-container.theme-body{background: -moz-Dialog !important;}
+.devtools-toolbar{position: sticky; top: 0px}
+
+/*  Stylesheet editor  */
+#style-editor-chrome .devtools-invisible-splitter{border-radius: 10px 0 0 10px !important; background: color-mix(in srgb, #000 20%, -moz-Dialog) !important; !important; width: 10px; margin-left: -10px !important; opacity: 100% !important; margin-bottom: 35px !important}
+.editor-pane .CodeMirror-gutters{background: color-mix(in srgb, #000 20%, -moz-Dialog) !important}
+.editor-pane .CodeMirror-scroll{background-color: color-mix(in srgb, currentColor 5%, -moz-Dialog) !important;}
+.at-rule-label{ border: none !important; padding: 5px !important; background: aliceblue; border-radius: 8px !important; margin: 0 0 3px 5px !important; width: 92% !important; background-color: color-mix(in srgb, currentColor 5%, -moz-Dialog) !important; }
+window#style-editor-chrome-window box#style-editor-chrome.devtools-responsive-container.theme-body box.splitview-side-details.devtools-main-content box.splitview-details.splitview-active hbox.stylesheet-details-container vbox.stylesheet-sidebar.theme-sidebar toolbar.devtools-toolbar, .stylesheet-at-rules-container{background: color-mix(in srgb, #000 20%, -moz-Dialog) !important}
+.splitview-nav{border-radius: 10px !important;}
+.splitview-nav > *{border-radius: 8px !important; border: none !important; margin-bottom: 5px !important; padding: 3px !important; background-image: none !important}
+.splitview-nav > *:not(:hover, .splitview-active){background: color-mix(in srgb, currentColor 5%, -moz-Dialog) !important}
+#splitview-resizer-target{background-color: -moz-Dialog !important}
+.splitview-main > toolbar, .loading .splitview-nav-container{border-inline-end: none !important} /*  Removes line while loading  */
+.splitview-side-details.devtools-main-content{background: color-mix(in srgb, #000 20%, -moz-Dialog) !important;}
+window#style-editor-chrome-window box#style-editor-chrome.devtools-responsive-container.theme-body box.splitview-side-details.devtools-main-content box.splitview-details.splitview-active hbox.stylesheet-details-container box.stylesheet-editor-input.textbox iframe{ border-radius: 0 10px 10px 0 !important; }
+.stylesheet-editor-input.textbox{margin-bottom: -10px !important;z-index: 1;}
+.devtools-toolbar.stylesheet-editor-status{height: 45px !important; padding-top: 10px !important; margin-bottom: -45px;}
+.stylesheet-at-rules-container{margin-bottom: -10px !important;z-index: 2;border-radius: 0 0 10px 10px;}
+.stylesheet-details-container{background-color: -moz-Dialog !important;}
+.stylesheet-sidebar.theme-sidebar .devtools-toolbar{border-radius: 10px 10px 0 0 !important;}
+.stylesheet-sidebar.theme-sidebar{background-color: -moz-Dialog !important; margin: 0 5px; margin-bottom: -15px !important;}
+.splitview-side-details.devtools-main-content{margin-bottom: -10px !important;z-index: 1;border-radius: 0 10px 10px 0 !important;margin-right: 5px;}
+.stylesheet-editor-input.textbox > iframe{margin-bottom: 10px !important;}
+.stylesheet-at-rules-container{padding-left: 10px;}
+#style-editor-chrome box:has(> .splitview-side-details.devtools-main-content){margin-bottom: 45px !important}
+
+/*  Accordions  */
+body main#mount.theme-body div.debugger div.A11y-mouse div.split-box.vert div.controlled div.secondary-panes-wrapper div.secondary-panes div ul.accordion *:not([type="checkbox"]) {border: none !important}
+body.theme-body.devtools-monospace div#content div.mainFrame span div.split-box.vert div.uncontrolled{border-radius: 10px !important}
+body.theme-body.devtools-monospace div#content div.mainFrame span div.split-box.vert{background: -moz-Dialog !important}
+body.theme-body.devtools-monospace div#content div.mainFrame span div.split-box.vert div.controlled div.right-sidebar{margin-left: 10px !important;}
+body.theme-body.devtools-monospace div#content div.mainFrame span div.split-box.vert div.controlled div.right-sidebar ul.accordion{width: 95% !important; padding-right: 10px !important;}
+#sidebar-panel-ruleview, .accordion{background-color: -moz-Dialog !important}
+.accordion li h2:not(.accordion-header){background-color: color-mix(in srgb, currentColor 5%, -moz-Dialog) !important; margin: 5px 2px 5px 8px !important; border-radius: 8px !important; width: 97% !important}
+.ruleview-rule, .accordion-content{border-radius: 8px !important; padding: 5px !important; background-color: color-mix(in srgb, currentColor 5%, -moz-Dialog) !important; border-bottom: none !important; margin-bottom: 4px !important;}
+.ruleview-header, .accordion-header{background-color: -moz-Dialog !important; border-bottom: none !important}
+
+/*  Cahnges tab  */
+#sidebar-panel-changes .source .href{background: -moz-Dialog !important; border: none !important}
+#sidebar-panel-changes .source{background: -moz-Dialog !important}
+#sidebar-panel-changes .changes__toolbar{ padding: 6px !important; border: none !important; background: -moz-Dialog !important; padding: 0 !important; }
+#sidebar-panel-changes .changes__rule {background: color-mix(in srgb, currentColor 5%, -moz-Dialog) !important; border-radius: 8px !important; margin-bottom: 2px !important}
+#sidebar-panel-changes{background: -moz-Dialog !important; border: none !important}
+
+.changes__copy-all-changes-button{width: -moz-available; padding: 6px !important; background-color: color-mix(in srgb, currentColor 5%, -moz-Dialog) !important; border-radius: 10px !important; margin: 6px !important; background-position: 13px 9.5px !important; height: 35px !important;}
+.changes__copy-all-changes-button:hover{background-color: color-mix(in srgb, currentColor 13%, -moz-Dialog) !important}
+
+
+/*  Accessability  */
+.accessibility-check{background-color: color-mix(in srgb, currentColor 5%, -moz-Dialog) !important;}
+.right-sidebar{background: -moz-Dialog !important;}
+.checks .list > *{padding: 0 !important}}
+
+
+@-moz-document url-prefix(about:){
+
+    textarea:focus-visible{outline: 2px solid AccentColor !important;}
+
+
+    #input[type="search"], #about-config-search{padding-left: 13px !important; background-image:none !important}
+input[type="text"]:not(.with-icon):not(.filter), input[type="password"], textarea{padding: 5px !important;}
+
+
+/* Element | about:checkerboard */
+
+#canvas {
+border-radius: 15px !important;
+border: 1px solid #fff1 !important;
+margin: 10px !important;
+}
+
+/* Element | about:checkerboard */
+
+#active {
+border: none !important
+}
+
+button:not(.search-handoff-button), .button{border-radius: 10px !important}
+
+.button {
+    margin: 8px !important;
+    width: auto !important;
+    box-shadow: #0004 1px 1px 2px !important;
+}
+input[type="range"]{height: 2px !important; background-color: color-mix(in srgb, currentColor 30%, -moz-Dialog) !important;}
+input[type="range"]::-moz-range-thumb:hover{background: AccentColor !important;}
+input[type="range"]::-moz-range-progress{background: AccentColor !important;}
+input[type="range"]:hover{background-color: color-mix(in srgb, currentColor 30%, -moz-Dialog) !important;}
+input[type="range"]:hover::-moz-range-thumb{background: AccentColor !important;}
+
+.action-box{border: none !important; box-shadow: #0004 1px 1px 2px !important;}
+
+
+table{border: 1px solid color-mix(in srgb, FieldText 12.5%, #0000) !important;}
+td{border: none !important;}
+td:not(:first-child){border-left: 1px solid color-mix(in srgb, FieldText 6.2%, #0000) !important;}
+tr:not(:last-child) td{border-bottom: 1px solid color-mix(in srgb, FieldText 6.2%, #0000) !important;}
+
+#profiles table{
+margin-bottom: 10px;
+}
+
+#process-table {
+margin: 10px !important;
+width: calc(100% - 20px) !important;
+border-radius: 13px !important;
+}
+
+/*
+.picker-item:after{border-radius: 50% !important;}*/
+
+moz-visual-picker-item:has(.theme-preview){
+    --visual-picker-item-border-radius-inner: 50% !important
+}
+
+button#picker-item {
+box-shadow: none !important;
+background: #0000 !important;
+}
+moz-visual-picker > moz-visual-picker-item  > span {border-radius: 50% !important}
+
+#process-thead {
+width: calc(100% - 20px) !important;
+padding-top: 30px !important;
+margin-top: -30px !important;
+margin-left: -1px !important;
+background: -moz-Dialog !important;
+}
+
+
+button:not([title="Close"])[role="radio"] > .button-background{background: #0000 !important; border-top: none !important; box-shadow: none !important}
+button:not([title="Close"])[role="radio"][aria-checked="true"] > .button-background{background:  color-mix(in srgb, currentColor 5%, -moz-Dialog) !important; !important; border-top: none !important; box-shadow: none !important}
+
+#process-thead th:first-of-type{border-top-left-radius: 13px;}
+#process-thead th:last-of-type{border-top-right-radius: 13px;}
+
+button.clickable{border-radius: 0 !important}
+
+
+/*  Button style  */
+
+:root,
+body,
+#search-container,
+#toolbar,
+.sticky-container,
+.main-search,
+.main-heading,
+header
+{background: light-dark(#eee, #222)  !important;}
+
+#input,
+textarea,
+select,
+.select-wrapper,
+button:not([title="Close"])>.button-background,
+input[type="range"]::-moz-range-thumb,
+.disco-cta-button,
+#about-config-search,
+#about-config-show-only-modified,
+#show-all.ghost-button,
+input,
+button:not(.downloadButton):not(.toggle-button):not(#settings-link):not(.picker-item):not(.clickable):not([role="menuitemcheckbox"]):not([role="menuitem"]):not(.devtools-tabbar-button):not(.devtools-tab):not(#main-button):not([role="tab"]):not(.command)
+{
+box-shadow: #0004 1px 1px 2px !important;
+border: none !important;
+background-color: light-dark(#ccc, #333) !important;
+border-radius: 10px !important;
+appearance: none !important
+}
+
+#input:hover, select:hover,
+button:not([title="Close"])>.button-background:hover,
+.disco-cta-button:hover,
+#about-config-show-only-modified:hover,
+#show-all.ghost-button:hover,
+input:hover,
+button:not(.downloadButton):not(.toggle-button):not(#settings-link):not(.picker-item):not(.clickable):not([role="menuitemcheckbox"]):not([role="menuitem"]):not(.devtools-tabbar-button):not(.devtools-tab):not(#main-button):not([role="tab"]):not(.command):hover
+{background-color: light-dark(#b4b4b4, #3b3b3b) !important;}
+
+.moz-card, .card.addon, #prefs{background: light-dark(#e6e6e6, #2a2a2a)  !important; border-radius: 15px}
+moz-box-group, #prefs{outline: none !important; box-shadow: #0004 1px 1px 2px !important; background: light-dark(#eee, #222)}
+
+:root{scrollbar-color:  AccentColor transparent !important;}
+
+@media (prefers-color-scheme: light)
+{:root{color-scheme: light;}}
+@media (prefers-color-scheme: dark)
+{:root{color-scheme: dark;}}
+
+
+
+#prefs{border: 1px solid color-mix(in srgb, FieldText 12.5%, #0000) !important; border-collapse: separate !important; border-spacing: 0 !important; border-radius: 10px !important; overflow: hidden !important; }
+
+[groupid="browserLayout"]{display: none !important}
+
+button[role="tab"]{background: #0000 !important; box-shadow: none !important}
+button[role="tab"]:hover, #categories > .category:hover{background: color-mix(in srgb, FieldText 13%, #0000) !important}
+button[role="tab"][aria-selected="true"],#categories > .category[selected]{background: AccentColor !important; color: FieldText !important}
+/* Element | about:preferences */
+
+
+
+moz-card, moz-box-button, moz-box-link, .select-wrapper{border: none !important}
+
+
+#page-header>.sticky-container {
+padding: 10px 15px !important;
+margin-left: 8px !important;
+}
+#categories {
+padding-right: 10px !important;
+}
+
+.connect-section__header{background: var(--background-color-box) !important;}
+
+@-moz-document url-prefix("about:preferences"){
+    #categories > [role="none"] {
+    margin-right: 5px !important;
+    }
+  #categories .nav-separator,  hr{width: calc(100% - 25px) !important; margin: auto !important}}
+
+.category.category-no-icon.selected:not(:has(.category-subsection.selected)), .category-subsection.selected{background: AccentColor !important; color: #fff !important}
+.category.category-no-icon.selected:has(.category-subsection){background:  color-mix(in srgb, AccentColor 20%, #0000) !important; color: #fff !important}
+.category.category-no-icon.selected:has(.category-subsection) .category-subsection:hover{background: AccentColor !important; color: #fff !important}
+.category-subsection{border-radius: 13px !important}
+
+:root{--box-border-radius-start: inherit !important;}
+
+#prefs[has-visible-prefs] .add.odd ::before{height: 0px !important; border-bottom: 1px solid color-mix(in srgb, FieldText 9.2%, -moz-Dialog) !important;}
+.add.odd > *{ padding-top: 1px !important; border: none !important}
+
+#dropzone:hover{background-color: color-mix(in srgb, AccentColor 70%, #0000)  !important;}
+
+
+input:checked, #input:checked, #input.toggle-button[aria-pressed="true"], #about-config-show-only-modified:checked{background: AccentColor !important}
+input:checked:hover, #input:checked:hover, #input.toggle-button[aria-pressed="true"]:hover, #about-config-show-only-modified:checked:hover{background-color: color-mix(in srgb, #fff 20%, AccentColor) !important}
+
+#categories > .category{border: none !important}
+#categories > .category[selected]{color: #fff !important}
+#toolbar { padding-bottom: 7px !important; }
+#prefs { margin-top: 0px !important; }
+
+
+#input[type="checkbox"], #about-config-show-only-modified, input[type="checkbox"]{border-radius: 5px !important; transition: .25s; min-width: 16px !important;}
+#input[type="checkbox"]:checked, #about-config-show-only-modified:checked, input[type="checkbox"]:checked{ background-image: url(./svg/check-symbolic.svg) !important;}
+
+
+#input[type="radio"], input[type="radio"]{transition: .25s;}
+#input[type="radio"]:checked, input[type="radio"]:checked{ background-image: url(./svg/bullet-symbolic.svg) !important;}
+
+#input[type="checkbox"],
+#input[type="radio"],
+input[type="radio"],
+.select-wrapper,
+button:not([title="Close"])>.button-background,
+input[type="range"]::-moz-range-thumb
+{border-top: 1px solid #fff3 !important;}
+
+
+#main-button[title="Close"] .button-background { background-image: url(./svg/close-symbolic.svg) !important; background-repeat: no-repeat !important; background-size: 18px !important; background-position: center !important; background-color: #0000 !important;}
+#main-button[title="Close"]:hover .button-background { background-image: url(./svg/close-hover-symbolic.svg) !important;}
+#main-button[title="Close"] .button-background img{display: none !important}
+.info-box-content {
+    border-radius: 15px !important;
+}
+
+.filters {
+    /*! height: 51px; *//*! align-content: end; */align-items: center !important;
+    /*! align-self: center; */
+}
+#filter-type {
+width: 250px !important;
+}
+
+/* Element | about:certificate */
+
+
+
+
+
+
+
+
+
+.download:nth-child(even)[selected], .download[selected]{ background-color: AccentColor !important; outline: none !important }
+.download{background-color: var(--table-row-background-color) !important;}
+.download:nth-child(even){background-color: var(--table-row-background-color-alternate) !important;}
+.download button.downloadButton.downloadIconShow{background-color: #0000 !important;}
+
+
+
+
+
+
+.certificate-tab{
+    border-bottom: 0px !important;
+}
+
+
+/* Element | about:certificate */
+
+.certificate-tabs, #panel0{
+    border-radius: 10px !important;
+    margin-bottom: 10px !important;
+}
+
+moz-box-group{margin: 0px !important}
+panel-list{ margin-top: 3px !important}
+
+[role="listitem"]{margin: 5px 0 !important;}
+
+.customkeys-sidebar{background: #0000 !important}
+
+#moz-card-details[open] > summary{
+margin-bottom: var(--card-padding);
+}
+
+
+#documentation {
+margin: 15px;
+}
+
+
+hr {
+    border: none !important;
+    border-bottom: 1px solid var(--border-color) !important;
+    background-color: #0000 !important;
+}
+
+thead, tbody.collapsible{border-bottom: 1px solid var(--panel-separator-color) !important;}
+
+h2.tab:first-of-type{border-top-left-radius: 15px !important; border-bottom-left-radius: 15px !important;}
+h2.tab{background: #0004 !important; border: none !important; margin-bottom: 10px !important; margin-top: 10px !important; position: relative;}
+h2.tab:last-of-type{border-top-right-radius: 15px !important; border-bottom-right-radius: 15px !important;}
+h2.tab.active{color: FieldText !important}
+h2.tab.active::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: color-mix(in srgb, FieldText 5%, -moz-Dialog) !important;
+    z-index: -1;
+    margin: 6px;
+    border-radius: 10px;
+}
+
+
+/* moz-toggle.css | chrome://global/content/elements/moz-toggle.css */
+
+.toggle-button {
+    &::before {
+        height: 19px !important;
+        width: 20px !important;
+        margin-top: -3px !important;
+        @media (prefers-color-scheme: light)
+        {
+        background-color: #fff !important;
+        }
+        @media (prefers-color-scheme: dark)
+        {
+        background-color: #333 !important;
+        }
+        outline top: 1px solid #fff3 !important;
+        border-top: 1px solid #fff3 !important;
+        box-shadow: 1px 1px 2px #0004 !important;
+    }
+    width: 36px !important;
+    height: 14px !important;
+    min-height: 0 !important;
+}
+button:not([title="Close"])>.button-background{color: FieldText !important}
+moz-segmented-control{
+    border: none !important;
+    background: #0003 !important;
+    border-radius: 8px !important;
+}
+#main-button[role="radio"] button:not([title="Close"])>.button-background{border: none !important; background: #0000 !important; box-shadow: none !important; padding: 8px 0 !important; margin: 2px;}
+@media (prefers-color-scheme: dark)
+{#main-button[role="radio"][aria-checked="true"] button:not([title="Close"])>.button-background{border: none !important; background: #222 !important; box-shadow: none !important; color: FieldText !important}}
+@media (prefers-color-scheme: light)
+{#main-button[role="radio"][aria-checked="true"] button:not([title="Close"])>.button-background{border: none !important; background: #eee !important; box-shadow: none !important; color: FieldText !important}}
+
+#prefs:not([has-visible-prefs]):not(:has(.add)){border-bottom: 0px !important; margin-left: 19px !important; width: calc(100% - 41px) !important; }
+
+}
+
+
+
+@-moz-document url("about:profiles"){
+button
+{
+@media (prefers-color-scheme: light)
+{
+    background-color: #ccc !important;
+}
+@media (prefers-color-scheme: dark)
+{
+    background-color: #333 !important;
+}
+border: none !important;
+border-top: 1px solid #fff3 !important;
+box-shadow: #0004 1px 1px 2px !important;
+border-radius: 10px !important;
+appearance: none !important
+}
+}
+@-moz-document url("about:config"), url("about:policies"){
+
+
+    table,
+    td,
+    td:not(:first-child),
+    tr:not(:last-child) td{border: none !important;}
+
+}
+
+
+@-moz-document url("about:compat"), url-prefix("about:telemetry")
+{body {
+    margin: 10px 20px !important;
+}}
+@-moz-document url("about:checkerboard"){
+    th{border: none !important; border-bottom: 1px solid var(--border-color) !important}
+    th:not(:first-of-type){border-left: 1px solid var(--border-color) !important}
+    table{border-radius: 13px !important}
+    body {
+        margin: 40px;
+    }
+
+}
+
