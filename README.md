@@ -17,6 +17,26 @@
 5. Move the files there
 6. Restart Firefox
 
+***
+
+GTK styles have some effect on the appearance of firefox.
+
+This can cause some issues with the colors, the corner radiuses, and the shadows.
+
+For the best experience, I recommend also installing [the darkly gtk theme](https://github.com/wrymt/darkly-gtk)
+
+***
+
+This theme uses `user.js` to load some settings into firefox.
+
+It can only contain settings you can set in `about:config`, and firefox reads it every cold start.
+
+If you see any setting you don't want changed, remove that line before running.
+
+Delete the file once it was applied if you don't want those settings to reset every restart.   
+
+***
+
 https://github.com/user-attachments/assets/8f3003fc-6007-4e43-af9e-636a91b5d4fb
 
 ***
