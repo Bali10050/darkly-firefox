@@ -17,7 +17,7 @@
 5. Move the files there
 6. Restart Firefox
 
-[](https://github.com/user-attachments/assets/8f3003fc-6007-4e43-af9e-636a91b5d4fb)
+https://github.com/user-attachments/assets/8f3003fc-6007-4e43-af9e-636a91b5d4fb
 
 ***
 
