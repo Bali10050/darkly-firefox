@@ -23,7 +23,7 @@ https://github.com/user-attachments/assets/8f3003fc-6007-4e43-af9e-636a91b5d4fb
 
 ### Options supported
 
-`layout.floatingTitlebar` option to use with a floating titlebar - needs gtk shadow/border/outline/etc. disabled
+`layout.floatingTitlebar` option to use with a floating titlebar
 
 
 `layout.booooring` option for a more traditional layout 
