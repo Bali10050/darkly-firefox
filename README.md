@@ -16,6 +16,7 @@
 3. Open the profile's root directory
 5. Move the files there
 6. Restart Firefox
+7. Remove `user.js`
 
 ***
 
