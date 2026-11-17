@@ -231,7 +231,7 @@ tab-group .tabbrowser-tab{background-color: color-mix(in oklab, var(--tab-group-
     border-radius: 0 0 15px 0 !important;}
 
 :root:not([sizemode="maximized"], [sizemode="fullscreen"]) body {
-    background: #0000 !important;
+    background: #00000019 !important;
 }
 
 
@@ -677,18 +677,3 @@ margin-left: 13px !important; height: 30px !important;
 }
 
 #appMenu-zoomReduce-button2 .toolbarbutton-icon, #appMenu-zoomEnlarge-button2 .toolbarbutton-icon{fill: #fff !important;}
-
-@media -moz-pref("layout.floatingTitlebar"){
-#navigator-toolbox {
-margin: 0 16px;
-box-shadow:
-0 0 0 1px #00000008,
-0 6px 15px 1px #0003;
-}
-#browser {
-border-radius: 16px !important;
-margin: 0 16px 22px 16px;
-box-shadow:
-0 0 0 1px #00000008,
-0 6px 15px 1px #0003;
-}}
