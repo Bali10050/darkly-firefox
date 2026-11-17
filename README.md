@@ -52,3 +52,5 @@ High level of detail - more than 1000 thick lines of css
 Vertical tabs aren't supported yet
 
 Hover and active states sometimes missing
+
+Custom border radius isn't working yet
