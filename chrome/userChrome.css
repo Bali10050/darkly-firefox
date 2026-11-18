@@ -250,7 +250,6 @@ border-radius: 0px !important;
 
 border-top: #fff3 inset 1px !important;
 
-
 background-image: var(--toolbox-background-image);
 background-repeat: var(--toolbox-background-repeat);
 background-position: var(--toolbox-background-position);
@@ -258,6 +257,8 @@ background-size: var(--toolbox-background-size);
 background-color: var(--toolbox-background-color);
 }
 
+:root:not([sizemode="maximized"], [sizemode="fullscreen"]) #navigator-toolbox{border-bottom: #0001 solid 1px !important;}
+:root:not([sizemode="maximized"], [sizemode="fullscreen"]) #browser{border-top: #0001 solid 1px !important; background-color: -moz-Dialog !important}
 
 
 @media -moz-pref("layout.floatingTitlebar"){
