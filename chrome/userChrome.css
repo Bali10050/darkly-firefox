@@ -257,11 +257,11 @@ background-size: var(--toolbox-background-size);
 background-color: var(--toolbox-background-color);
 }
 
-:root:not([sizemode="maximized"], [sizemode="fullscreen"]) #navigator-toolbox{border-bottom: #0001 solid 1px !important;}
-:root:not([sizemode="maximized"], [sizemode="fullscreen"]) #browser{border-top: #0001 solid 1px !important; background-color: -moz-Dialog !important}
-
 
 @media -moz-pref("layout.floatingTitlebar"){
+
+:root:not([sizemode="maximized"], [sizemode="fullscreen"]) #navigator-toolbox{border-bottom: #0001 solid 1px !important;}
+:root:not([sizemode="maximized"], [sizemode="fullscreen"]) #browser{border-top: #0001 solid 1px !important; background-color: -moz-Dialog !important}
 
 
     :root[sizemode="maximized"]:not([sizemode="fullscreen"]) .browserContainer {
@@ -307,7 +307,7 @@ margin-left: 3px !important; margin-right: 3px !important; margin-bottom: 3px !i
 
 
 :root:not([sizemode="fullscreen"]) .browserContainer {
-border-radius: 15px !important;}
+    border-radius: 15px !important;}
 .browserContainer {
 border: none !important;
 }
