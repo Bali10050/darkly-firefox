@@ -301,6 +301,11 @@ align-items: center !important;
 
 
 }
+:root:not([sizemode="fullscreen"])[sizemode="maximized"] .browserContainer {
+margin-left: 3px !important; margin-right: 3px !important; margin-bottom: 3px !important;}
+:root:not([sizemode="fullscreen"])[sizemode="maximized"] #browser{background-color: var(--toolbox-background-color) !important; }
+
+
 :root:not([sizemode="fullscreen"]) .browserContainer {
 border-radius: 15px !important;}
 .browserContainer {
