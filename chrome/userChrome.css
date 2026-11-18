@@ -231,7 +231,7 @@ tab-group .tabbrowser-tab{background-color: color-mix(in oklab, var(--tab-group-
     border-radius: 0 0 15px 0 !important;}
 
 :root:not([sizemode="maximized"], [sizemode="fullscreen"]) body {
-    background: #00000019 !important;
+    background: #00000029 !important;
 }
 
 
