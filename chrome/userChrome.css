@@ -93,9 +93,7 @@ image-rendering: optimizeQuality !important;
 /*  Makes the space between the reload button and the urlbar less akwardly large  */
 #urlbar-container{margin-left: 1px !important}
 
-/*  Makes the sidebar a little nicer  */
-#sidebar-splitter{display: none}
-#sidebar-header{padding-bottom: 0!important; border-bottom: 0!important}
+
 
 /*  The thing in the bottom with links  */
 #statuspanel-label{background-color: -moz-Dialog!important; border-color: transparent!important; border-radius: 8px !important; color: currentColor!important; margin: 0 0 4.5px 4px!important; padding: 5px!important; opacity: 100%;}
@@ -137,10 +135,6 @@ findbar{height: 50px; border: none !important; background-color: -moz-Dialog !im
 
 #urlbar:not([open]){color: currentColor!important} #urlbar[open]{color: var(--toolbar-field-focus-color)}  /*  Fixes the urlbar color on some themes  */
 
-/*  Makes sidebars nicer  */
-#sidebar-box{/* margin-top: -10px !important;*/  border-radius: 0 10px 0 0!important; z-index: 1}
-#sidebar-box[positionend="true"]{border-radius: 10px 0 0 0!important}
-#sidebar-box > *{background-image:none;}
 
 /*  Drop menus  */
 /*[position="bottomright topright"]{--panel-border-radius: 0 5px 5px 5px!important}
@@ -635,25 +629,6 @@ spacer[part="overflow-start-indicator"]{padding-right: 7px;}
 spacer[part="overflow-end-indicator"]{padding-left: 6px;}
 /* Element | chrome://browser/content/browser.xhtml */
 
-#sidebar-container {
-margin-top: -40px !important;
-background-color: var(--toolbar-background-color);
-border-radius: 15px;
-border-radius: 15px;
-}
-
-/* Element | chrome://browser/content/browser.xhtml */
-
-#sidebar-box {
-margin-top: -40px !important;
-border-radius: 15px !important;
-}
-
-#sidebar{
-
-border-radius: 15px !important;
-}
-
 
 menupopup, panel{
     --panel-border-radius: 13px !important;
@@ -683,3 +658,48 @@ margin-left: 13px !important; height: 30px !important;
 }
 
 #appMenu-zoomReduce-button2 .toolbarbutton-icon, #appMenu-zoomEnlarge-button2 .toolbarbutton-icon{fill: #fff !important;}
+
+/*  Sidebar  */
+@media not -moz-pref("layout.floatingTitlebar"){
+#sidebar-container {
+margin-top: -40px !important;
+background-color: var(--toolbar-background-color);
+border-radius: 15px;
+border-radius: 15px;
+}
+
+#sidebar-box {
+margin-top: -40px !important;
+border-radius: 15px !important;
+}
+
+#sidebar{
+border-radius: 15px !important;
+}
+
+
+/*  Makes sidebars nicer  */
+#sidebar-box{/* margin-top: -10px !important; */ border-radius: 0 10px 0 0!important; z-index: 1}
+#sidebar-box[positionend="true"]{border-radius: 10px 0 0 0!important}
+#sidebar-box > *{background-image:none;}
+
+
+/*  Makes the sidebar a little nicer  */
+#sidebar-splitter{display: none}
+#sidebar-header{padding-bottom: 0!important; border-bottom: 0!important}
+}
+@media -moz-pref("layout.floatingTitlebar")
+{
+#sidebar-box {
+border-radius: 15px !important;
+margin-left: 4px !important;
+margin-top: 3px;
+margin-bottom: 4px !important;
+}
+
+#sidebar {
+border-radius: 15px !important;
+margin-bottom: 5px !important;
+}
+}
+
