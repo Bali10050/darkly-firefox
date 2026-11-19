@@ -582,7 +582,7 @@ tab-group .tabbrowser-tab:last-of-type{margin-right: 5px !important}
 
 
 .toolbarbutton-icon{-moz-context-properties: fill !important;}
-.titlebar-buttonbox .toolbarbutton-icon{margin-top: -2px;}
+@media not -moz-pref("layout.floatingTitlebar"){.titlebar-buttonbox .toolbarbutton-icon{margin-top: -2px;}}
 .titlebar-buttonbox .toolbarbutton-icon, .tab-close-button{height: 18px !important; width: 18px !important;}
 .titlebar-min .toolbarbutton-icon{list-style-image: url(./svg/minimize-symbolic.svg) !important; background-image: none !important; fill: currentColor}
 .titlebar-max .toolbarbutton-icon{list-style-image: url(./svg/maximize-symbolic.svg) !important; background-image: none !important; fill: currentColor}
