@@ -703,3 +703,8 @@ margin-bottom: 5px !important;
 }
 }
 
+tab-split-view-wrapper {
+height: fit-content !important;
+background: #0000 !important;
+max-width: 430px !important;
+}
